@@ -25,6 +25,14 @@ public class MainActivity extends AppCompatActivity {
         TextView TResultado = findViewById(R.id.TResultado);
         Juego juego = new Juego();
 
+        BRestart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IVImagen.setImageResource(R.drawable.question);
+                TResultado.setText("");
+            }
+        });
+
         View.OnClickListener listener = view -> {
             int id = view.getId();
             Juego.Imagen imagen = juego.lanzarApuesta();
